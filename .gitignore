@@ -1,2 +1,4 @@
 .vscode
 venv/
+blog/__pycache__
+django_demo/__pycache__
