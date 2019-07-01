@@ -4,8 +4,8 @@
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style='width: 80%;'>
             <img class='rounded-circle' style='height: 75px; width: 75px; margin: auto;' src='{{ post.author.profile.image.url }}'>
             <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-secondary">{{ post.author }}</strong>
-                <h3 class="mb-0"><a class='stretched-link' href="{% url 'post-detail' post.id %}"></a>{{ post.title }}</h3>
+                <a href="{% url 'user-posts' post.author.username %}"><strong class="d-inline-block mb-2 text-secondary">{{ post.author }}</strong></a>
+                <a href="{% url 'post-detail' post.id %}" style="text-decoration: none; color: inherit;"><h3 class="mb-0">{{ post.title }}</h3></a>
                 <div class="mb-1 text-muted">{{ post.date_posted }}</div>
                 <p class="mb-auto">{{ post.content }}</p>
             </div>

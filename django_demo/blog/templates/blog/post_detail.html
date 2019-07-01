@@ -3,7 +3,7 @@
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style='width: 80%;'>
             <img class='rounded-circle' style='height: 75px; width: 75px; margin: auto;' src='{{ object.author.profile.image.url }}'>
             <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-secondary">{{ object.author }}</strong>
+                <a href="{% url 'user-posts' object.author.username %}"><strong class="d-inline-block mb-2 text-secondary">{{ object.author }}</strong></a>
                 <h3 class="mb-0">{{ object.title }}</h3>
                 <div class="mb-1 text-muted">{{ object.date_posted }}
                     {% if object.author == user %}
