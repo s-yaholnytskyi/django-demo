@@ -50,17 +50,17 @@
                         {% endif %}
                       </div>
                     </li>
-                    <li class="nav-item dropdown" style='position: absolute; right: 10%;'>
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          More...
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="#">Latest Posts</a>
-                          <a class="dropdown-item" href="#">Announcements</a>
-                          <a class="dropdown-item" href="#">Calendars</a>
-                          <a class="dropdown-item" href="#">etc</a>
-                        </div>
-                      </li>
+                    <li>
+                      {% if user.is_authenticated %}
+                      <div class="media" style="position: fixed; right: 0; top: 0; margin-right: 1%; margin-top: 5px;">
+                        <img style='border-radius: 50%; height: 50px; width: 50px; margin-right: 2px; ' src="{{ user.profile.image.url }}">
+                        <div class="media-body" style="color: white; margin-top: 8px;">
+                          <a class="stretched-link" href="{% url 'profile' %}" style="text-decoration: none; color: inherit;"><h2 class="account-heading" style="font-size: 14px; margin-bottom: -5px;">{{ user.username }}</h2></a>
+                          <p class="text-secondary">{{ user.email }}</p>
+                          </div>
+                      </div>
+                      {% endif %}
+                    </li>
                   </ul>
                 </div>
         </nav>
@@ -75,6 +75,7 @@
         {% endif %}
         {% block content %}{% endblock %}
     </div> 
+    {
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
