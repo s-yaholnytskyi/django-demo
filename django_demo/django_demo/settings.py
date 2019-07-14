@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -137,4 +138,13 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'django.svc.user@gmail.com'
 EMAIL_HOST_PASSWORD = "'O0V/+yDH*"
 
-AUTH_PROFILE_MODULE = "users.Profile"
+# AUTH_PROFILE_MODULE = "users.Profile"
+
+AWS_ACCESS_KEY_ID = 'AKIA5FDHLZIGNH4A6222'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'django-serhii'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
