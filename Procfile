@@ -1,1 +1,1 @@
-"web: django_demo.wsgi" 
+"web: django_demo.wsgi"
